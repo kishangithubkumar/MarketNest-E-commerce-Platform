@@ -1,89 +1,134 @@
-# 🛒 MarketNest E-commerce Platform
+# 🛒 MarketNest – E-commerce Backend Platform
 
 ## 🚀 Overview
 
-**MarketNest** is a full-stack **e-commerce platform backend** built using **Spring Boot**, designed to simulate a real-world online shopping system.
+**MarketNest** is a **production-grade e-commerce backend system** built using **Spring Boot**, designed to handle real-world online shopping operations including authentication, product management, cart workflows, and order processing.
 
-The project demonstrates:
+The project emphasizes:
 
 * Scalable backend architecture
-* RESTful API design
-* Product, cart, and order management
-* Clean layered architecture
+* Secure authentication using JWT
+* API documentation with Swagger
+* Containerized deployment using Docker
 
 ---
 
 ## 🏗️ Architecture
 
-The application follows a **layered monolithic architecture** (with microservices-ready design):
+The system follows a **layered architecture pattern** ensuring modularity and maintainability:
 
 * **Controller Layer** → Handles API requests
 * **Service Layer** → Business logic
-* **Repository Layer** → Database operations
-* **Model Layer** → Entity definitions
+* **Repository Layer** → Database interaction
+* **DTO Layer** → Data transfer abstraction
+* **Security Layer** → JWT-based authentication
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Category   | Technology        |
-| ---------- | ----------------- |
-| Backend    | Java, Spring Boot |
-| Database   | MySQL / H2        |
-| ORM        | Spring Data JPA   |
-| Build Tool | Maven             |
-| API Style  | REST APIs         |
-| Testing    | Postman           |
+| Category   | Technology           |
+| ---------- | -------------------- |
+| Backend    | Java, Spring Boot    |
+| Security   | Spring Security, JWT |
+| Database   | MySQL / PostgreSQL   |
+| ORM        | Spring Data JPA      |
+| API Docs   | Swagger (OpenAPI)    |
+| Container  | Docker               |
+| Build Tool | Maven                |
 
 ---
 
 ## 📂 Project Structure
 
-```id="7d3prx"
-.
-├── src/
-│   ├── main/
-│   │   ├── java/com/ecommerce/project
-│   │   │   ├── controller
-│   │   │   ├── service
-│   │   │   ├── repository
-│   │   │   ├── model
-│   │   │   └── SbEcomApplication.java
-│   │   └── resources/
-│   │       └── application.properties
+```id="u0n5h9"
+com.ecommerce.project
+│
+├── controller
+├── service
+├── repository
+├── model
+├── dto
+├── security
+├── exception
+├── config
+└── util
 ```
 
 ---
 
-## 📦 Features
+## 🔐 Authentication & Authorization
 
-### 🛍️ Product Management
-
-* Add, update, delete products
-* View product catalog
-
-### 🛒 Cart Management
-
-* Add items to cart
-* Remove items
-* Update quantity
-
-### 📑 Order Handling (if implemented)
-
-* Place orders
-* Track orders
+* JWT-based authentication
+* Role-based access control
+* Secure API endpoints
+* Stateless session management
 
 ---
 
-## 🔄 API Endpoints (Sample)
+## 📦 Core Features
 
-| Method | Endpoint       | Description      |
-| ------ | -------------- | ---------------- |
-| GET    | /products      | Get all products |
-| POST   | /products      | Add product      |
-| PUT    | /products/{id} | Update product   |
-| DELETE | /products/{id} | Delete product   |
-| POST   | /cart          | Add to cart      |
+### 🛍️ Product & Category Management
+
+* Create, update, delete products
+* Search, pagination & sorting
+
+### 🛒 Cart Management
+
+* Add/remove products
+* Update quantity
+* Fetch user cart
+
+### 📑 Order Management
+
+* Place orders
+* Convert cart → order
+* Order tracking
+
+### 👤 User & Role Management
+
+* User registration
+* Role assignment
+* Profile management
+
+### 📍 Address Management
+
+* Add/update addresses
+* Fetch user addresses
+
+---
+
+## 📄 API Documentation (Swagger)
+
+Interactive API documentation is available via Swagger UI:
+
+```id="q0y9s7"
+http://localhost:8080/swagger-ui/index.html
+```
+
+Features:
+
+* Test APIs directly from browser
+* View request/response models
+* JWT authentication support
+
+---
+
+## 🐳 Docker Support
+
+The application is fully containerized for consistent deployment.
+
+### Build Docker Image
+
+```bash id="5s8pjz"
+docker build -t marketnest-backend .
+```
+
+### Run Container
+
+```bash id="xg0a8c"
+docker run -p 8080:8080 marketnest-backend
+```
 
 ---
 
@@ -91,7 +136,7 @@ The application follows a **layered monolithic architecture** (with microservice
 
 ### 1️⃣ Clone Repository
 
-```id="cs6r5g"
+```bash id="2n5b0j"
 git clone https://github.com/kishangithubkumar/MarketNest-E-commerce-Platform.git
 cd MarketNest-E-commerce-Platform
 ```
@@ -100,59 +145,59 @@ cd MarketNest-E-commerce-Platform
 
 ### 2️⃣ Configure Database
 
-Update `application.properties`:
-
-```properties id="v7rw4i"
-spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+```properties id="6gk7wx"
+spring.datasource.url=jdbc:mysql://localhost:3306/marketnest
 spring.datasource.username=root
 spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
 ```
 
 ---
 
 ### 3️⃣ Run Application
 
-```bash id="f3s9h9"
+```bash id="6lp4sj"
 mvn spring-boot:run
 ```
 
 ---
 
-### 4️⃣ Test APIs
+### 4️⃣ Access Services
 
-Use:
-
-* Postman
-* Browser
+* Swagger UI → http://localhost:8080/swagger-ui/index.html
+* API Base URL → http://localhost:8080
 
 ---
 
 ## 📊 Key Highlights
 
+✔️ Production-style backend system
+✔️ JWT-based secure authentication
+✔️ Full e-commerce business logic
+✔️ Swagger API documentation
+✔️ Dockerized deployment
 ✔️ Clean layered architecture
-✔️ RESTful API design
-✔️ Scalable backend structure
-✔️ Database integration using JPA
-✔️ Real-world e-commerce use case
 
 ---
 
-## 🧠 What I Learned
+## 🧠 Engineering Concepts Used
 
-* Designing backend systems using Spring Boot
-* Building REST APIs
-* Managing relational databases with JPA
-* Structuring scalable applications
+* DTO Pattern
+* Exception Handling
+* Validation (`@Valid`)
+* JPA Relationships
+* Stateless Authentication (JWT)
+* Pagination & Sorting
 
 ---
 
 ## 🎯 Future Enhancements
 
-* Add authentication (JWT / OAuth2)
-* Implement payment integration
-* Add frontend (React / Angular)
-* Convert into microservices architecture
-* Add Docker support
+* Payment gateway integration
+* API Gateway implementation
+* Microservices migration
+* CI/CD pipeline (GitHub Actions)
+* Kubernetes deployment
 
 ---
 
