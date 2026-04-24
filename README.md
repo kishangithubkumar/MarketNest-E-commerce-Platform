@@ -16,6 +16,7 @@ The project emphasizes:
 ## 🏗️ Architecture
 <img width="1536" height="1024" alt="ChatGPT Image Apr 25, 2026, 01_21_10 AM" src="https://github.com/user-attachments/assets/ffdd3b34-83f8-4b04-8ad5-9ec0df80ad22" />
 
+## ER-Diagram
 <img width="1165" height="1631" alt="ecommerce-er-diagram (1)_page-0001" src="https://github.com/user-attachments/assets/e1a01942-7ac4-4d86-a2f1-4953a704414b" />
 
 
