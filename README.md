@@ -132,7 +132,6 @@ docker run -p 8080:8080 marketnest-backend
 
 ---
 
-## ▶️ Getting Started
 
 ### 1️⃣ Clone Repository
 
