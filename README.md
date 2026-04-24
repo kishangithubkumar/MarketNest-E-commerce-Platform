@@ -14,6 +14,8 @@ The project emphasizes:
 ---
 
 ## 🏗️ Architecture
+<img width="1165" height="1631" alt="ecommerce-er-diagram (1)_page-0001" src="https://github.com/user-attachments/assets/e1a01942-7ac4-4d86-a2f1-4953a704414b" />
+
 
 The system follows a **layered architecture pattern** ensuring modularity and maintainability:
 
